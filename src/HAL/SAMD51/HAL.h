@@ -1,9 +1,8 @@
 /**
  * Marlin 3D Printer Firmware
- * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
  *
- * Based on Sprinter and grbl.
- * Copyright (c) 2011 Camiel Gubbels / Erik van der Zalm
+ * Copyright (c) 2020 MarlinFirmware [https://github.com/MarlinFirmware/Marlin]
+ * SAMD51 HAL developed by Giuliano Zaro (AKA GMagician)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -20,10 +19,6 @@
  *
  */
 #pragma once
-
-/**
- * SAMD51 HAL developed by Giuliano Zaro (AKA GMagician)
- */
 
 #define CPU_32_BIT
 
@@ -112,7 +107,7 @@ typedef Servo hal_servo_t;
 //
 
 //#define HAL_ADC_FILTERED          // Disable Marlin's oversampling. The HAL filters ADC values.
-#define HAL_ADC_VREF_MV   3300
+#define HAL_ADC_VREF         3.3
 #define HAL_ADC_RESOLUTION  10      // ... 12
 
 //

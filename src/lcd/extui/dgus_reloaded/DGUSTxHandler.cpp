@@ -36,7 +36,7 @@
   #include "../../../feature/pause.h"
 #endif
 
-#if HAS_MEDIA
+#if ENABLED(SDSUPPORT)
   void DGUSTxHandler::SetFileControlState(int file, bool state) {
     DGUS_Control control;
 
@@ -177,7 +177,7 @@
 
     dgus_display.WriteString((uint16_t)vp.addr, dgus_screen_handler.filelist.filename(), vp.size);
   }
-#endif // HAS_MEDIA
+#endif // SDSUPPORT
 
 void DGUSTxHandler::PositionZ(DGUS_VP &vp) {
   float position = ExtUI::isAxisPositionKnown(ExtUI::Z) ?
@@ -421,16 +421,16 @@ void DGUSTxHandler::PIDKp(DGUS_VP &vp) {
     default: return;
     #if ENABLED(PIDTEMPBED)
       case DGUS_Data::Heater::BED:
-        value = ExtUI::getBedPID_Kp();
+        value = ExtUI::getBedPIDValues_Kp();
         break;
     #endif
     #if ENABLED(PIDTEMP)
       case DGUS_Data::Heater::H0:
-        value = ExtUI::getPID_Kp(ExtUI::E0);
+        value = ExtUI::getPIDValues_Kp(ExtUI::E0);
         break;
       #if HAS_MULTI_HOTEND
         case DGUS_Data::Heater::H1:
-          value = ExtUI::getPID_Kp(ExtUI::E1);
+          value = ExtUI::getPIDValues_Kp(ExtUI::E1);
           break;
       #endif
     #endif
@@ -447,16 +447,16 @@ void DGUSTxHandler::PIDKi(DGUS_VP &vp) {
     default: return;
     #if ENABLED(PIDTEMPBED)
       case DGUS_Data::Heater::BED:
-        value = ExtUI::getBedPID_Ki();
+        value = ExtUI::getBedPIDValues_Ki();
         break;
     #endif
     #if ENABLED(PIDTEMP)
       case DGUS_Data::Heater::H0:
-        value = ExtUI::getPID_Ki(ExtUI::E0);
+        value = ExtUI::getPIDValues_Ki(ExtUI::E0);
         break;
       #if HAS_MULTI_HOTEND
         case DGUS_Data::Heater::H1:
-          value = ExtUI::getPID_Ki(ExtUI::E1);
+          value = ExtUI::getPIDValues_Ki(ExtUI::E1);
           break;
       #endif
     #endif
@@ -473,16 +473,16 @@ void DGUSTxHandler::PIDKd(DGUS_VP &vp) {
     default: return;
     #if ENABLED(PIDTEMPBED)
       case DGUS_Data::Heater::BED:
-        value = ExtUI::getBedPID_Kd();
+        value = ExtUI::getBedPIDValues_Kd();
         break;
     #endif
     #if ENABLED(PIDTEMP)
       case DGUS_Data::Heater::H0:
-        value = ExtUI::getPID_Kd(ExtUI::E0);
+        value = ExtUI::getPIDValues_Kd(ExtUI::E0);
         break;
       #if HAS_MULTI_HOTEND
         case DGUS_Data::Heater::H1:
-          value = ExtUI::getPID_Kd(ExtUI::E1);
+          value = ExtUI::getPIDValues_Kd(ExtUI::E1);
           break;
       #endif
     #endif

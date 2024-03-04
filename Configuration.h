@@ -1991,9 +1991,9 @@
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Offsets for bed leveling points
-  #define PROBING_MARGIN_LEFT 10
-  #define PROBING_MARGIN_RIGHT 10
-  #define PROBING_MARGIN_FRONT 15
+  #define PROBING_MARGIN_LEFT 20
+  #define PROBING_MARGIN_RIGHT 20
+  #define PROBING_MARGIN_FRONT 40
   #define PROBING_MARGIN_BACK 0
 
 

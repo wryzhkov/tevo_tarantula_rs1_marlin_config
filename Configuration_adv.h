@@ -969,7 +969,7 @@
  * Z Steppers Auto-Alignment
  * Add the G34 command to align multiple Z steppers using a bed probe.
  */
-//#define Z_STEPPER_AUTO_ALIGN
+#define Z_STEPPER_AUTO_ALIGN
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
   /**
    * Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
@@ -1019,7 +1019,7 @@
   #endif
 
   // On a 300mm bed a 5% grade would give a misalignment of ~1.5cm
-  #define G34_MAX_GRADE              5    // (%) Maximum incline that G34 will handle
+  #define G34_MAX_GRADE              1    // (%) Maximum incline that G34 will handle
   #define Z_STEPPER_ALIGN_ITERATIONS 5    // Number of iterations to apply during alignment
   #define Z_STEPPER_ALIGN_ACC        0.02 // Stop iterating early if the accuracy is better than this
   #define RESTORE_LEVELING_AFTER_G34      // Restore leveling after G34 is done?
